@@ -1,0 +1,26 @@
+CREATE DATABASE user_auth;
+
+USE user_auth;
+
+CREATE TABLE users (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    username VARCHAR(50) NOT NULL UNIQUE,
+    password VARCHAR(255) NOT NULL,
+    email VARCHAR(100) NOT NULL
+);
+CREATE TABLE employees (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    name VARCHAR(255) NOT NULL,
+    phone_number VARCHAR(20) NOT NULL,
+    address TEXT NOT NULL,
+    skills TEXT NOT NULL,
+    achievements TEXT NOT NULL,
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
+INSERT INTO employees (name, phone_number, address, skills, achievements) VALUES
+('Dharshan', '1234567890', '123 Main St', 'PHP, JavaScript', 'Employee of the Month'),
+('Puli', '0987654321', '456 Elm St', 'Java, Python', 'Best Project Award'),
+('Dolu', '1122334455', '789 Maple St', 'HTML, CSS', 'Top Salesperson'),
+('Don', '2233445566', '101 Pine St', 'C++, Ruby', 'Innovator Award'),
+('Bharak', '3344556677', '202 Oak St', 'SQL, Node.js', 'Team Leader Award'),
+('Indra', '4455667788', '303 Birch St', 'React, Angular', 'Best Developer');
